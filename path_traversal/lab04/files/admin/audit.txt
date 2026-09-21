@@ -1,0 +1,2 @@
+FLAG{lab04_role_check_missing}
+Internal audit record

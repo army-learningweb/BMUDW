@@ -1,0 +1,2 @@
+Public Handbook
+File access must validate paths and authorization separately.
