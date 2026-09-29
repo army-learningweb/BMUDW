@@ -4,6 +4,7 @@ $labs = [
     ['02', 'Numeric Parameter Injection', 'Understand numeric SQL context', 'lab02/'],
     ['03', 'String Parameter Injection', 'Test a category filter', 'lab03/'],
     ['04', 'UNION Query', 'Explore result column count and type compatibility', 'lab04/'],
+    ['05', 'Information Disclosure', 'Use UNION to expose a training-only record', 'lab05/'],
 ];
 ?>
 <!DOCTYPE html>
@@ -19,7 +20,7 @@ $labs = [
 <body class="path-lab">
     <main class="path-container">
         <h1>SQL Injection</h1>
-        <p>Web Security Lab · Part 05. Thực hành SQL Injection qua login, tham số số, chuỗi và cấu trúc kết quả UNION.</p>
+        <p>Web Security Lab · Part 05. Thực hành SQL Injection qua login, tham số, UNION và information disclosure.</p>
         <article>
             <h2>Cách kiểm thử</h2>
             <ol>

@@ -11,6 +11,7 @@ function getDatabase(): PDO
     $pdo->exec('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT NOT NULL UNIQUE, password TEXT NOT NULL)');
     $pdo->exec('CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, name TEXT NOT NULL, category TEXT NOT NULL, price INTEGER NOT NULL, is_public INTEGER NOT NULL DEFAULT 1)');
     $pdo->exec('CREATE TABLE IF NOT EXISTS category_products (id INTEGER PRIMARY KEY, name TEXT NOT NULL, category TEXT NOT NULL, price INTEGER NOT NULL, is_public INTEGER NOT NULL DEFAULT 1)');
+    $pdo->exec('CREATE TABLE IF NOT EXISTS training_secrets (id INTEGER PRIMARY KEY, name TEXT NOT NULL, category TEXT NOT NULL, secret_value TEXT NOT NULL)');
 
     $pdo->exec("INSERT OR IGNORE INTO users (id, username, password) VALUES
         (1, 'student01', 'training-password-01'),
@@ -27,6 +28,8 @@ function getDatabase(): PDO
         (3, 'Lab Notebook', 'stationery', 120000, 1),
         (4, 'Security Training USB', 'accessories', 350000, 1),
         (900, 'Internal Red Team Manual', 'internal', 0, 0)");
+    $pdo->exec("INSERT OR IGNORE INTO training_secrets (id, name, category, secret_value) VALUES
+        (901, 'Internal Training Key', 'training-secret', 'FLAG{lab05_information_disclosure}')");
 
     return $pdo;
 }
