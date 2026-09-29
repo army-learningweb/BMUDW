@@ -36,9 +36,10 @@ if ($_SESSION['STUDENT_ACCOUNT']['role'] !== 'admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
 
     <style>
         .success {
@@ -50,6 +51,7 @@ if ($_SESSION['STUDENT_ACCOUNT']['role'] !== 'admin') {
     <?php if (!empty($_SESSION['success'])) { ?>
         <p class="success"><?php echo $_SESSION['success']; ?></p>
     <?php } ?>
+    <aside class="test-guide">Mở trực tiếp trang này trong phiên student để kiểm tra rằng server-side role check chặn quyền admin.</aside>
 </body>
 
 </html>

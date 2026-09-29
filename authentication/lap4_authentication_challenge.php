@@ -38,9 +38,10 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
     <style>
         label {
             display: block;
@@ -91,6 +92,14 @@ if (isset($_POST['submit'])) {
             <?php echo $_SESSION['error'] ?>
         </div>
     <?php } ?>
+    <aside class="test-guide">
+        <h2>Hướng dẫn kiểm thử</h2>
+        <ol>
+            <li>Đăng nhập bằng student01 / <code>123456</code> và mở Student Dashboard.</li>
+            <li>Thử mở Admin Dashboard trong cùng phiên student.</li>
+            <li>Kết quả dự kiến là từ chối truy cập; so sánh quyết định dựa trên session với cookie role.</li>
+        </ol>
+    </aside>
 </body>
 
 </html>

@@ -1,8 +1,8 @@
-<?php 
+<?php
 session_start();
 
-if(isset($_SESSION['user_login'])){
-    if($_SESSION['user_login']['role'] !== 'admin'){
+if (isset($_SESSION['user_login'])) {
+    if ($_SESSION['user_login']['role'] !== 'admin') {
         $_SESSION['error'] = 'Lỗi, không được phép truy cập';
         header('location: lap3_vertical_previlage.php');
     }
@@ -20,9 +20,10 @@ if(isset($_SESSION['user_login'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
     <h1 style="color:green">Bạn đã truy cập thành công vào ADMIN PANEL</h1>
     <table border=1>
         <thead>
@@ -51,6 +52,7 @@ if(isset($_SESSION['user_login'])){
         </tbody>
     </table>
 
+    <aside class="test-guide">Trang này chỉ nên hiển thị cho role <code>admin</code>. Thử mở trực tiếp khi đang ở phiên student để kiểm tra server-side authorization.</aside>
     <a href="lap3_vertical_previlage.php">Quay về</a>
 </body>
 

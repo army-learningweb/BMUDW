@@ -18,9 +18,10 @@ if (isset($_SESSION['users'][1001])) {
 <head>
     <meta charset="UTF-8">
     <title>User Profile</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
     <h1>User Profile</h1>
 
     <p>Requested ID: <span><?php echo $_SESSION['users'][$id]['id'] ?></span></p>
@@ -28,6 +29,7 @@ if (isset($_SESSION['users'][1001])) {
     <p>Name: <span><?php echo $_SESSION['users'][$id]['name'] ?></span></p>
     <p>Email: <span><?php echo $_SESSION['users'][$id]['email'] ?></span></p>
 
+    <aside class="test-guide">Hãy so sánh ID yêu cầu với User ID hiện tại. Thử thay <code>id=1001</code> thành <code>id=1002</code> để kiểm tra quyền truy cập chéo.</aside>
     <br>
     <a href="lap4_access_controll_challenges.php">Dashboard</a>
 </body>

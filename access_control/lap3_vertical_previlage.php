@@ -16,17 +16,18 @@ unset($_SESSION['error']);
 <head>
     <meta charset="UTF-8">
     <title>Lab 03 - Vertical Privilege Escalation</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
 
-<style>
-    .hidden{
-        opacity: 0;
-        pointer-events: none;
-    }
-</style>
-   
+    <style>
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+
     <h1>Lab 03 - Vertical Privilege Escalation</h1>
 
     <h2>Challenge</h2>
@@ -44,6 +45,15 @@ unset($_SESSION['error']);
         <li><a href="#">Account Settings</a></li>
         <li class="hidden"><a href="lap3_admin_panel.php">Admin Panel</a></li>
     </ul>
+
+    <aside class="test-guide">
+        <h2>Hướng dẫn kiểm thử</h2>
+        <ol>
+            <li>Xác nhận tài khoản hiện tại có role <code>student</code>.</li>
+            <li>Mở trực tiếp <code>lap3_admin_panel.php</code> thay vì dựa vào liên kết đang ẩn.</li>
+            <li>Trang quản trị dự kiến từ chối student và chuyển về challenge; việc ẩn liên kết không phải là biện pháp phân quyền.</li>
+        </ol>
+    </aside>
 
     <?php if ($error) { ?>
         <p style="color:red"><?php echo $error ?></p>

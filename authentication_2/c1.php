@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenge 01 - Login</title>
+    <link rel="stylesheet" href="../lab-theme.css">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -91,7 +92,7 @@
     </style>
 </head>
 
-<body>
+<body id="lab-theme">
 
     <div class="container">
         <div class="card">
@@ -108,6 +109,10 @@
                 <button type="submit" class="btn-submit">Login</button>
             </form>
         </div>
+        <aside class="test-guide">
+            <h2>Hướng dẫn kiểm thử</h2>
+            <p>Thử đăng nhập <code>student</code> / <code>12345</code>, sau đó thử sai password để so sánh kết quả.</p>
+        </aside>
     </div>
 
 </body>

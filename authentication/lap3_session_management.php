@@ -30,9 +30,10 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
     <style>
         label {
             display: block;
@@ -88,6 +89,15 @@ if (isset($_POST['submit'])) {
             <?php echo $success['login'] ?>
         </div>
     <?php } ?>
+
+    <aside class="test-guide">
+        <h2>Hướng dẫn kiểm thử</h2>
+        <ol>
+            <li>Ghi lại SESSION ID trước khi đăng nhập.</li>
+            <li>Đăng nhập bằng <code>admin</code> / <code>123456</code>.</li>
+            <li>So sánh ID sau đăng nhập; session ID nên được đổi sau khi xác thực thành công.</li>
+        </ol>
+    </aside>
 
 
 </body>

@@ -29,9 +29,10 @@ unset($_SESSION['error']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
     <style>
         img {
             height: auto;
@@ -82,6 +83,15 @@ unset($_SESSION['error']);
 
 
     </table>
+
+    <aside class="test-guide">
+        <h2>Hướng dẫn kiểm thử</h2>
+        <ol>
+            <li>Mở hóa đơn của student01 bằng ID <code>5001</code>.</li>
+            <li>Thay ID trong URL bằng <code>5002</code> để yêu cầu hóa đơn của student02.</li>
+            <li>Ứng dụng dự kiến chặn yêu cầu và hiển thị thông báo trên trang danh sách.</li>
+        </ol>
+    </aside>
 
     <?php if ($error) { ?>
         <p class="error"><?php echo $error ?></p>

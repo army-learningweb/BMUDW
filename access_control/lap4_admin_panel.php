@@ -17,9 +17,10 @@ if ($user_role !== 'admin') {
 <head>
     <meta charset="UTF-8">
     <title>Administrator Area</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
     <h1>Administrator Area</h1>
 
     <h2>System Information</h2>
@@ -29,6 +30,7 @@ if ($user_role !== 'admin') {
         <li>Pending invoices: 2</li>
     </ul>
 
+    <aside class="test-guide">Mở trang này từ phiên student và xác nhận hệ thống từ chối quyền administrator.</aside>
     <p><a href="index.php">Dashboard</a></p>
 </body>
 

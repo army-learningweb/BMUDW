@@ -42,7 +42,8 @@ $isLocked = $_SESSION['login_attempts'] >= $maxAttempts;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge 02 - Check Errror Login</title>
+    <title>Challenge 02 - Login Attempt Limit</title>
+    <link rel="stylesheet" href="../lab-theme.css">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -145,7 +146,7 @@ $isLocked = $_SESSION['login_attempts'] >= $maxAttempts;
     </style>
 </head>
 
-<body>
+<body id="lab-theme">
 
     <div class="container">
         <div class="card">
@@ -167,6 +168,14 @@ $isLocked = $_SESSION['login_attempts'] >= $maxAttempts;
                 <button type="submit" class="btn-submit" <?= $isLocked ? 'disabled' : '' ?>>Login</button>
             </form>
         </div>
+        <aside class="test-guide">
+            <h2>Hướng dẫn kiểm thử</h2>
+            <ol>
+                <li>Gửi thông tin sai năm lần trong cùng một phiên để kích hoạt khóa đăng nhập.</li>
+                <li>Quan sát số lượt còn lại và trạng thái nút Login sau mỗi lần thử.</li>
+                <li>Sau khi bị khóa, thử tài khoản đúng <code>admin</code> / <code>Admin@123</code>; trang vẫn từ chối trong phiên đó. Dùng cửa sổ riêng để bắt đầu lại.</li>
+            </ol>
+        </aside>
     </div>
 
 </body>

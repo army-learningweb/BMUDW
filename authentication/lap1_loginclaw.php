@@ -6,7 +6,7 @@ $success = [];
 $ACCOUNT_SYSTEM['username'] = "admin";
 $ACCOUNT_SYSTEM['password'] = "123456";
 
-if(isset($error['login'])) $error['login'] = '';
+if (isset($error['login'])) $error['login'] = '';
 
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
     // } else {
     //     $error['login'] = "Đăng nhập thất bại";
     // }
-    
+
     // Fix (Kiểm tra cả tài khoản, lẫn mật khẩu)
     if ($username == $ACCOUNT_SYSTEM['username'] && $password == $ACCOUNT_SYSTEM['password']) {
         $success['login'] = 'Đăng nhập thành công';
@@ -37,9 +37,10 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
     <style>
         label {
             display: block;
@@ -90,6 +91,15 @@ if (isset($_POST['submit'])) {
             <?php echo $success['login'] ?>
         </div>
     <?php } ?>
+
+    <aside class="test-guide">
+        <h2>Hướng dẫn kiểm thử</h2>
+        <ol>
+            <li>Baseline thành công: <code>admin</code> / <code>123456</code>.</li>
+            <li>Thử username <code>admin</code> với password sai; login cần bị từ chối.</li>
+            <li>So sánh với ví dụ kiểm tra username đơn thuần được ghi trong source bài.</li>
+        </ol>
+    </aside>
 
 </body>
 

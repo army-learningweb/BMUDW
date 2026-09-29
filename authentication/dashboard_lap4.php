@@ -18,9 +18,10 @@ unset($_SESSION['error']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
     <style>
         a {
             display: block;
@@ -40,6 +41,10 @@ unset($_SESSION['error']);
             <?php if (!empty($error)) { ?>
                 <p class="error"><?php echo $error  ?></p>
             <?php } ?>
+            <aside class="test-guide">
+                <h2>Hướng dẫn kiểm thử</h2>
+                <p>Trong phiên student, mở Admin Dashboard và xác nhận server từ chối. Đăng xuất để xoá session trước khi chạy lại challenge.</p>
+            </aside>
 </body>
 
 </html>

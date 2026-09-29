@@ -14,9 +14,11 @@ unset($_SESSION['error']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
+    <h1>Lab 04 - Access Control Challenge</h1>
     <section>
         <h2>Current User</h2>
         <p>Username: <strong><?php echo $_SESSION['users'][1001]['username'] ?></strong></p>
@@ -48,6 +50,14 @@ unset($_SESSION['error']);
             <p style="color:red"><?php echo $error ?></p>
         <?php } ?>
     </section>
+    <aside class="test-guide">
+        <h2>Hướng dẫn kiểm thử</h2>
+        <ol>
+            <li>Mở profile <code>1001</code> và invoice <code>5001</code> của student01.</li>
+            <li>Đổi lần lượt ID trên URL thành <code>1002</code> và <code>5002</code> để kiểm tra quyền sở hữu.</li>
+            <li>Thử Admin Area trong phiên student; server dự kiến từ chối truy cập.</li>
+        </ol>
+    </aside>
 </body>
 
 </html>

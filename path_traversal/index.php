@@ -13,53 +13,22 @@ $labs = [
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Path Traversal Labs</title>
-    <style>
-        body {
-            font: 16px/1.5 system-ui, sans-serif;
-            max-width: 850px;
-            margin: 40px auto;
-            padding: 0 20px;
-            color: #182230;
-            background: #f5f7fa
-        }
-
-        main {
-            background: #fff;
-            padding: 28px;
-            border: 1px solid #d9e0e8;
-            border-radius: 8px
-        }
-
-        h1 {
-            margin-top: 0
-        }
-
-        article {
-            border-top: 1px solid #e4e8ed;
-            padding: 18px 0
-        }
-
-        article:first-of-type {
-            border-top: 0
-        }
-
-        a {
-            color: #075985;
-            font-weight: 600
-        }
-
-        code {
-            background: #eef2f6;
-            padding: 2px 5px;
-            border-radius: 3px
-        }
-    </style>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
     <main>
         <h1>Path Traversal &amp; File Access</h1>
         <p>Bộ lab thực hành cục bộ về filesystem path và quyền truy cập file.</p>
+        <aside class="test-guide">
+            <h2>Cách kiểm thử</h2>
+            <ol>
+                <li>Mở từng lab và ghi nhận file public hoặc ID hợp lệ trước.</li>
+                <li>Thử input mẫu trong hướng dẫn của lab để kiểm tra path validation hoặc authorization.</li>
+                <li>Đối chiếu nội dung file trả về với quyền sở hữu dự kiến.</li>
+            </ol>
+            <p>Chỉ thử trên các file giả lập trong thư mục lab cục bộ.</p>
+        </aside>
         <?php foreach ($labs as $lab): ?>
             <article>
                 <h2>Lab <?= htmlspecialchars($lab[0]) ?> - <?= htmlspecialchars($lab[1]) ?></h2>

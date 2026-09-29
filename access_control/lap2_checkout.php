@@ -14,9 +14,10 @@ if ($id != 1) {
 <head>
     <meta charset="UTF-8">
     <title>Invoice</title>
+    <link rel="stylesheet" href="../lab-theme.css">
 </head>
 
-<body>
+<body id="lab-theme">
     <h1>Invoice Detail</h1>
 
     <p>Current user ID:
@@ -36,6 +37,7 @@ if ($id != 1) {
         <p>Amount: <strong><?php echo $_SESSION['invoice'][$id]['total'] ?></strong></p>
     </div>
 
+    <aside class="test-guide">Kiểm thử IDOR: mở hóa đơn <code>5001</code> trước, sau đó thử <code>5002</code> trên URL. Hóa đơn của user khác dự kiến bị từ chối và đưa về danh sách.</aside>
     <a href="lap2_order_invoice.php">&larr; Lab Home</a>
 </body>
 

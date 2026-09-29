@@ -23,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge 01 - Login</title>
+    <title>Challenge 04 - Password Hash</title>
+    <link rel="stylesheet" href="../lab-theme.css">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -126,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 
-<body>
+<body id="lab-theme">
 
     <div class="container">
         <div class="card">
@@ -148,6 +149,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" class="btn-submit">Login</button>
             </form>
         </div>
+        <aside class="test-guide">
+            <h2>Hướng dẫn kiểm thử</h2>
+            <ol>
+                <li>Đăng nhập bằng <code>student</code> / <code>12345</code>.</li>
+                <li>Thử sai password và so sánh phản hồi.</li>
+                <li>Quan sát source: password được kiểm tra bằng <code>password_verify()</code> với hash, thay vì so sánh plaintext.</li>
+            </ol>
+        </aside>
     </div>
 
 </body>
