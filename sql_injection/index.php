@@ -5,6 +5,7 @@ $labs = [
     ['03', 'String Parameter Injection', 'Test a category filter', 'lab03/'],
     ['04', 'UNION Query', 'Explore result column count and type compatibility', 'lab04/'],
     ['05', 'Information Disclosure', 'Use UNION to expose a training-only record', 'lab05/'],
+    ['06', 'Boolean-Based Blind SQL Injection', 'Infer truth values from response differences', 'lab06/'],
 ];
 ?>
 <!DOCTYPE html>
